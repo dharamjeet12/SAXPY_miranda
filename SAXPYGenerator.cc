@@ -30,7 +30,7 @@ delete out;
 
 void SAXPYGenerator::generate(MirandaRequestQueue<GeneratorRequest*>* q) {
 out->verbose(CALL_INFO, 4, 0, "Generating next SAXPY operation\n");
-for (uint64_t i = 0; i < num_elements; i++) {
+for (uint64_t i = 0; i < num_elemenits; i++) {
     // Generate a read request for A[i]
     SimpleMem::Request *req = new SimpleMem::Request(SimpleMem::Request::Read, i*sizeof(double), sizeof(double));
     req->setVirtualAddress(i*sizeof(double));
@@ -46,7 +46,7 @@ for (uint64_t i = 0; i < num_elements; i++) {
 
 for (uint64_t i = 0; i < num_elements; i++) {
     // Generate a write request for Res[i] = A[i] + constant_c*B[i]
-    double val = A[i] + constant_c*B[i];
+    double val = constant_c*A[i] + B[i];
     SimpleMem::Request *req = new SimpleMem::Request(SimpleMem::Request::Write, i*sizeof(double) + 2*maxAddr, sizeof(double));
     req->setVirtualAddress(i*sizeof(double) + 2*maxAddr);
     req->setDatum(&val);

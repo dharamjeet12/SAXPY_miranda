@@ -3,7 +3,9 @@
 This repository contains the SAXPYGenerator source files written for the Miranda SST. The SAXPYGenerator is a component that generates SAXPY kernels, which are commonly used in performance analysis and testing of high-performance computing systems.
 ## Files
 SAXPYGenerator.cc: The source code file for the SAXPY generator.
+
 SAXPYGenerator.h: The header file for the SAXPY generator.
+
 CMakeLists.txt: The CMake file to build the SAXPYGenerator.
 ## Requirements
 SST

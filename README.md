@@ -13,6 +13,8 @@ CMake
 ## Building SAXPYGenerator
 #### Clone the repository to your local machine.
 git clone https://github.com/sstsimulator/sst-core.git
+
+git clone https://github.com/sstsimulator/sst-elements.git
 #### Navigate to the repository directory.
 cd path/sst-elements-library-12.1.0/src/sst/elements/miranda/generators
 #### Run CMake to configure the build.

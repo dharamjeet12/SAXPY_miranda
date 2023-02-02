@@ -45,12 +45,14 @@ for (uint64_t i = 0; i < num_elements; i++) {
 }
 
 for (uint64_t i = 0; i < num_elements; i++) {
-    // Generate a write request for Res[i] = A[i] + constant_c*B[i]
+    // Generate a write request for Res[i] = constant_c*A[i] + B[i]
     double val = constant_c*A[i] + B[i];
     SimpleMem::Request *req = new SimpleMem::Request(SimpleMem::Request::Write, i*sizeof(double) + 2*maxAddr, sizeof(double));
     req->setVirtualAddress(i*sizeof(double) + 2*maxAddr);
     req->setDatum(&val);
+    std::cout << "Writing to memory address " << i*sizeof(double) + 2*maxAddr << " for Res[" << i << "]" << std::endl;
     q->push_back(req);
+
 }
 }
 

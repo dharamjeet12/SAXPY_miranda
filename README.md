@@ -6,6 +6,8 @@ SAXPYGenerator.cc: The source code file for the SAXPY generator.
 
 SAXPYGenerator.h: The header file for the SAXPY generator.
 
+SAXPYGenerator_config.py: The Python script for configuring the generator.
+
 CMakeLists.txt: The CMake file to build the SAXPYGenerator.
 ## Requirements
 SST
